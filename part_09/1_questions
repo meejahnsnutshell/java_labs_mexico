@@ -1,0 +1,77 @@
+
+1) What is the difference between a byte stream and a character stream?
+
+- Byte stream handles input/output of bytes.
+- Character stream handles input/output of characters
+
+2) List at least 3 examples of byte stream classes?
+
+    1. DataInputStream - An input stream that contains methods for reading the Java
+       standard data types
+    2. DataOutputStream - An output stream that contains methods for writing the Java
+       standard data types
+    3. FileInputStream - Input stream that reads from a file
+
+3) List at least 3 examples of character stream classes?
+
+    1. BufferedReader - Buffered input character stream
+    2. BufferedWriter Buffered output character stream
+    3. CharArrayReader Input stream that reads from a character array
+
+4) What is try-with-resources? Why is it super cool?
+
+aka automatic resource management, try with resources automatically closes a file without having to
+write the extra code to to do.
+
+5) Demonstrate a try-wth-resources block:
+
+try(FileInputStream fin = new FileInputStream(args[0])){
+
+    do{
+        i = fin.read();
+        if(i != -1) {
+            sout((char) i);
+        }
+    } while (i != -1);
+
+} catch (IOException exc) {
+    sout("error");
+}
+
+6) What does the read() method on the FileInputStream class return?
+
+it reads a single byte of data and returns it as an int (-1 at the end of the file)
+
+7) What is the documentation above of the FileInputStream class header say? (hint: inside /** ... */)
+
+-- don't have this documentation..
+class signature is: public class FileInputStream extends InputStream
+
+8) Is a DataOutputStream used for bytes or characters?
+
+- is a byte stream
+
+9) What is a BufferedReader?
+
+- Reads text from a character-input stream, buffering characters so as to provide for the efficient
+    reading of characters, arrays, and lines.
+- Is a wrapper class
+- Loads line by line, makes reading bytes easier/more intuitive
+
+10) Why does a BufferedReader require an InputStreamReader as an argument?
+
+it's a wrapper, you need to convert to a character stream before using BufferedReader.
+
+11) What does the InputStreamReader do with it's byte stream argument?
+
+- It reads bytes and decodes them into characters
+
+12) What is the difference between the read() and readLine() on BufferedReader?
+
+- read() reads one character at a time
+- readLine() reads a line at a time
+
+13) Demonstrate instantiating a BufferedReader that will read a file called "yucatan_cenotes.txt"
+
+
+try(BufferedReader br = new BufferedReader(new FileReader("yucatan_cenotes.txt"))) {

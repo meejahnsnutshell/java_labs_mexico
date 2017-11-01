@@ -1,0 +1,33 @@
+
+Complete the coding challenges in questions 7 & 8 in the self test for chapter 10.
+
+10-7. Write a program that copies a text file. In the process, have it convert all spaces into hyphens.
+    Use the byte stream file classes. Use the traditional approach to closing a file by explicitly
+    calling close( ).
+
+    -done, see CopyAndConvertQ7Ch10 class, used it to copy Array notes in
+    CodingNomads/Notes folder to ArrayCopy.
+
+    - inputstream reads byte by byte (Fileinputstream is a wrapper class that adds functionality to open/
+    close a file.
+    - Fileinputstream is a byte stream, good here because we're not interested in what the file says,
+    just want to copy it.
+
+10-8. Rewrite the program described in question 7 so that it uses the character stream classes. This
+   time, use the try-with-resources statement to automatically close the file.
+
+   - done, see CopyConvertTwrQ8Ch10, used it to copy Array notes to ArrayCopy2.
+
+-------------------------
+
+Complete the coding challenges in questions 8 and 12 in the self test for chapter 11.
+
+11-8. Change the TickTock class so that it actually keeps time. That is, have each tick take one
+      half second, and each tock take one half second. Thus, each tick-tock will take one second.
+      (Don’t worry about the time it takes to switch tasks, etc.)
+      // each thread needs to sleep for 500 milliseconds
+
+11-12 On your own, try adding synchronization to the Queue class developed in previous chapters
+      so that it is safe for multithreaded use.
+      // add synchronized keyword to put method, so you can't use get at the same time as put.
+      - see DataStructures/Algorithms

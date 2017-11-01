@@ -1,0 +1,9 @@
+Bonus questions not covered in book.
+
+Write a class that can get the date of the last modification    // public long lastModified()
+can check whether or not you can write to that file             // public boolean canWrite()
+and can set a file to read-only.                                // public boolean setReadOnly()
+Hint, use the "File" class.
+
+// boolean canWrite() : Tests whether the application can modify the file denoted by this abstract
+pathname.
