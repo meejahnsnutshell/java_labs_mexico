@@ -1,0 +1,165 @@
+
+Answer the following:
+
+1) What are the access control modifiers (acm) provided in Java?
+
+public, private & protected
+
+2) Briefly explain each acm and how they differentiate from each other?
+
+public - that member can be accessed anywhere inside your code, ie outside of the class in which it resides
+private - can be accessed only by other members of its class, ie not outside of the class in which it resides
+protected - comes into play when inheritance is involved, discussed more in ch. 8
+default is public unless your program is broken down into packages
+
+3) Why do we use acm's?
+
+because it helps prevent the misuse of an object. By allowing access to private data only through
+a well-defined set of methods, you can prevent improper values from being assigned to that
+data—by performing a range check, for example.
+
+4) What is the risk of not using acm's?
+
+objects can be misused, users can change things you don't want them to or input info that is obviously wrong
+(like assigning ages to be very very high, or negative)
+
+5) Write a method signature that receives an object of type "Car" as a parameter.
+
+void methodName(Car obj){
+}
+
+6) Write a method signature that returns an object of type "Car".
+
+public Car methodName(parameters?){
+}
+
+7) What is a very important consideration to keep in mind when passing objects (hint: by reference) from one
+method to another?
+
+Each time a method that returns an object is invoked, a new object is created, and a reference to it is
+returned to the calling routine. That object remains in existence until it's not referenced anymore.
+
+8) What is method overloading?
+
+When you have 2 or more methods of the same name in the same class, but have parameters of different data types.
+
+9) Why is method overloading useful? (Hint: as compared to the implementation in the C language.)
+
+Supports Java's one interface, multiple methods feature. In Java, it is easy to implement the same method for
+different types of data, whereas in other languages, you would need to create a different method (with a different
+name) for each type of data.
+
+10) How do you overload a method? What signifies that a method is being overloaded?
+
+You overload a method by creating multiple methods of the same name, but with differing data type parameters.
+Multiple methods of the same name is what signifies that it's being overloaded.
+
+11) Below, by writing just the method signature, demonstrate overloading a method 3 times.
+
+public void methodName(int i)
+
+public void methodName(double x)
+
+public void methodName(String str)
+
+12) How do you overload a constructor? What signifies that a constructor is being overloaded?
+
+The same way you overload any other method. You'll know a constructor is being overloaded when you see multiple
+versions of the Constructor with differing data type arguments.
+
+13) Why do we overload constructors?
+
+Make mutiple constructors each with different data type arguments (the argument can be an object).
+
+14) Below, by writing just the constructor signature, demonstrate overloading a constructor 3 times.
+
+ClassName(){}
+
+ClassName(int i){}
+
+ClassName(float f){}
+
+15) What is recursion?
+
+the process of a method calling itself
+
+16) What important considerations must you keep in mind when using recursion?
+
+That you must have a conditional statement somewhere to force the method to return without the recursive call,
+if you don't, it will never return.
+
+17) How do you make a method recursive?
+
+have the method call itself
+
+18) How do you escape a recursive method?
+
+use an if to force a return for some condition
+
+like in the factorial example:
+
+int factR(int n) {
+int result;
+
+if(n==1) return 1;              // <--here
+result = factR(n-1) * n;
+return result;
+}
+
+19) Explain what "static" is all about?
+
+access modifier that allows a class member to be used before an object of its class has been created
+
+20) When should you use "static"?
+
+when you want to define a class member that will be used independently of any object of that class
+(note to self: static methods are called through the class, like: ClassName.methodName();)
+
+21) What differentiates static variables from instance variables?
+
+Objects do not receive their own copies of static variables, there is one copy that all objects share.
+static variables are global variables
+
+22) What is the quicksort? Briefly describe how the quicksort works.
+
+The quicksort takes a value, preferably exactly in the middle, and sorts the data into 2 groups, either >= or <
+the chosen value. This is then repeated for the remaining groups until every item is sorted.
+
+23) What is a nested, or inner, class?
+
+a class declared within another class
+
+24) What is the scope of a nested class?
+
+the scope of a nested class is bounded by its outer class (for this book we'll only use non-static nested
+classes), so the inner Class has access to all of the variables/methods declared in the outer class
+
+25) What is a variable-arity method?
+
+a method that takes a variable number of arguments
+ex: static void vaTest(int ... v){}
+
+26) What makes a variable-arity method unique? When should you use it?
+
+- the parameter list is not fixed & the variable length argument can be mixed with fixed arguments.
+- it should be used when the number of arguments entered may vary
+
+27) What is the shorthand name for variable-arity?
+
+varargs
+
+28) What important considerations must you keep in mind when using variable-arity methods? (hint: ambiguity)
+
+- When using varargs with overloaded methods, ambiguity can lead to errors if it isn't clear which method to use.
+vararg parameters can be empty and if you don't include that as an option, the computer won't know which
+method to use
+
+Ex: static void vaTest(int ... v) { // ...
+    static void vaTest(int n, int ... v) { // ...
+
+    if you call vaTest(2) // with an int,
+    it's not clear which method is being invoked because both take an int, and a vararg int can be empty,
+    so it could be either
+
+
+
