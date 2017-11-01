@@ -1,0 +1,32 @@
+
+Create the following:
+
+1) Write one super class with at least 3 private instance variables and at least 3 public methods - done
+
+2) Write three subclasses (with at least 3 methods each that are not getters and setters) that extend the
+super class - done
+
+Make sure each subclass can manipulate the private variables in the super class.
+    -done (demonstrated in a method)
+One subclass should extend another subclass which extends the super class. - done
+
+Each subclass should only have variables and methods that apply to that subclass, - done, in generic form
+ie Animal -> Mammal -> Whale.
+
+-Transportation
+double mph;
+double cost per mile;
+
+int easeOfUse //say a scale of 1 to 10
+
+public startTrip;
+public endTrip;
+public makeJourney; like how you will spend the time
+
+-Active         -Passive
+walk run bike   car train bus
+
+3) Make use of the keyword "super" in at least two constructors. - done
+
+4) Write an interface with at least 3 methods. Have the superclass implement this interface.
+-done
