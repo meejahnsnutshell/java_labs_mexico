@@ -1,0 +1,55 @@
+
+1) Turn the following into a Generic interface:
+Original:
+   public interface Consumer {
+       public void consume(String parameter)
+   }
+Edit:
+    public interface Consumer<T> {
+        public void consume(T o)
+    }
+
+2) What are a few advantages of using Generic types?
+
+- it allows you to write members without specifying the exact data type
+- one method can be used for multiple data types without having to rewrite it every time
+
+
+3) What is Type Erasure?
+- The types are set when you compile your code.
+- When your Java code is compiled, all generic type information is removed (erased).
+This means no type parameters exist at run time. They are simply a source-code mechanism.
+
+4) Assuming the following snippet:
+
+    public static <T> T returnType(T argument) {
+        return argument;
+    }
+
+    Does this work?
+    Integer i = returnType(1);
+    String s = returnType("String");
+
+5) What is a Bounded Type Parameter?
+
+a form of generic parameter that places some limit on the data type that can be use, such as Number.
+
+6) Demonstrate the use of Generic Wildcard in a method signature:
+- use the ? within the diamond brackets to signify the wildcard
+
+interface Collection<E> {
+    public boolean containsAll(Collection<?> c);
+    public boolean addAll(Collection<? extends E> c);
+}
+
+7) What are bounded and unbounded wildcards in Generics?
+
+the same idea of a non-wildcard bounded generic, there is a limit placed on what data types are
+accepted
+
+8) What is difference between List<? extends T> and List <? super T> ?
+
+- In the first, ? sets an upper bound. The data type can be any class type that is T or is a
+subclass of T (ie a class that extends T).The generic must be a subclass of T.
+- In the second, ? super sets a lower bound, super means that the generic type must be a parent
+class of T (ex: ? super Integer means Integer, Number and Object work.)
