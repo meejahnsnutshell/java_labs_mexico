@@ -1,0 +1,159 @@
+
+Answer the following questions:
+
+1) What is an array?
+
+- A collection of variables of the same type.
+- Is a convenient means of grouping together related variables.
+
+2) What the code required to create (instantiate) a String array with size 10 named "cats"?
+
+String[] cats = new string[10];
+
+3) What is a multidimensional array?
+
+- arrays with 2 or more dimensions
+- each dimension is placed in it's own brackets
+
+4) What is the code required to create (instantiate) a 2-dimensional int array that is 6 high and 6 wide named
+"scores"?
+
+int[][] scores = new int[6][6];
+
+5) Using code, how do you retrieve a String that is the 10th item in a traditional array named dogs?
+
+String item10 = dogs[9];
+
+6) What is an ArrayIndexOutOfBoundsException?
+
+An error you'll receive if you try to overrun or underrun the array (ex it holds 10 items and you try to pass through
+more or less than 10)
+- when you request an item outside the bounds of the array
+
+7) Using one line of code, demonstrate how to retrieve the second to the last item from a int array.
+
+int secondToLast = arrayName[(arrayName.length)-2];
+
+8) What is the maximum allowable size of an array in Java?
+
+The max for int which is : 2147483647
+
+9) What is a bubble sort?
+
+- The bubble sort repeatedly compares adjacent elements of an array. The first and second elements are compared
+and swapped if out of order.
+
+- a very inefficient sorting algorithm. Requires a nested for loop, outer loop must run as many times as the
+length of the collection -1. Inner loop compares sequential pairs and swaps them if need be.
+Depending on whether you're starting from the bottom or the top, the (next) smallest number will bubble to the top
+on each subsequent loop (or vice versa - largest to the bottom).
+
+10) How does a bubble sort work?
+
+It uses 2 nested for loops, the outer one starts at the first index and moves up to the <size>, the inner
+for loop starts at size-1 and iterates down. An inner if statement checks if the current value (b-1) is greater than
+the next index (b) and if so, they switch. The result is an index sorted from low to high.
+
+11) When might you use an irregular array? What is a good example of an irregular array?
+
+- A irregular array is when two or more indexes have differing dimensions (lengths).
+- Book ex is airport shuttle that runs 10 times/day on weekdays and twice/day on weekends
+
+12) Demonstrate how to iterate through an array, printing each value, using a for loop.
+
+int arrayName[] = new int[10];
+
+for(int i = 0; i < 10; i++) {
+    System.out.println("Index " + i + " is" + arrayName[i]);
+
+}
+
+13) Demonstrate how to iterate through an array, printing each value, using a while loop.
+
+int arrayName[] = new int[10];
+
+int i = 0;
+
+while (i < arrayName.length) {
+
+    System.out.println("Index " + i + " is" + arrayName[i]);
+    i++;
+
+}
+
+14) What is a queue?
+
+- A list in which elements are accessed first in, first out order only
+    (as opposed to a stack which is first in, last out)
+
+- there is a built-in queue in java but we built our own
+
+15) What are the two primary methods that a queue performs?
+
+put - determines where next element of data will be store
+
+get - determines at what location the next element of data will be obtained
+
+16) What is a stack?
+
+a list of elements that are accessed first in, last out
+
+17) What differentiates stacks and queues?
+
+the order in which the elements are accessed
+
+18) When would you use an enhanced for loop? aka for each
+
+when you want to iterate through every index of something, but you don't need access to the index
+
+for (int i : x) in whatever
+
+19) What is "The Collections Framework"? What classes does it include?
+
+The Collections Framework is a set of classes that implement various data structures, such as lists, vectors,
+sets, and maps.
+
+20) How do you iterate over a two-dimensional array? Demonstrate using psuedo code.
+
+if you have a 2-d array called arrayName, do this:
+
+// enhanced for loop
+
+for(int[] i : arrayName){
+    for (int j : i){
+    //do something
+    }
+}
+
+//traditional for loop
+
+for (int i = 0; i < dataArray.length; i++){
+
+            for (int j = 0; j < dataArray[i].length; j++){
+
+                sout(nums[i][j]);
+
+            }
+
+Note: nums.length is the vertical length
+num[i].length is the horizontal length of each row
+
+21) What is a String?
+
+- a datatype composed of words
+- it's an object type, not a primitive type
+
+22) What are a few common methods for operating on Strings?
+length(), indexOf(), lastIndexOf()
+
+23) What does "Strings are immutable" mean?
+
+the character sequence that makes up the string cannot be changed. Even if you're adding just one
+character, the old String is deleted and a new one is created.
+
+24) Using the CLI, how do you invoke a Java application and provide two parameters to the main method?
+
+compile first: javac ClassName.java
+enter in the command line: java ClassName parameter1 parameter2
+
+must be in file that is root of the program
