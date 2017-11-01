@@ -1,0 +1,42 @@
+
+Using Mysql shell & MySQL Workbench do the following: write down each command you execute below for review.
+
+- restore (populate) the sample employees database as illustrated here:
+https://dev.mysql.com/doc/employee/en/employees-installation.html
+(to restore the sample employees database, where instructions say: mysql -t < employees.sql, instead do:
+mysql -u root -p -t < /home/the-meej/CodingNomads/sql/test_db-master/employees.sql (adjust to your pathname))
+
+- connect to your mysql via command line
+mysql -u root -p
+
+- select a database to use
+
+used MySQL Workbench for the rest..
+
+- run a variety of select queries against the various tables in employees db
+select * from employees.employees limit 10;
+
+select distinct * from employees.departments;
+
+SELECT salary FROM employees.salaries
+where salary > 150000;
+
+SELECT min(salary) from salaries;
+
+SELECT max(salary) from salaries;
+
+- use a join query against at least two tables
+
+select e.first_name, d.dept_name
+from employees e
+join dept_emp de
+	on e.emp_no = de.emp_no
+join departments d
+	on de.dept_no = d.dept_no;
+
+- create a backup dump file of the employees database as illustrated here:
+https://dev.mysql.com/doc/refman/5.7/en/mysqldump-sql-format.html
+
+from command line: mysqldump -u root -p employees > employeesdump.sql
+
+

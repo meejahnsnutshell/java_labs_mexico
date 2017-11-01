@@ -1,0 +1,69 @@
+Using MySQLWorkbench do the following:
+
+1) create a new blank database with the name "car_dealership"
+
+2) create a new table named "users_cars" with the following fields: // lookup table
+    - id (auto increment)
+    - userID (refers to "id" in users table)
+    - carID (refers to "id" in cars table)
+
+
+2) create a new table named "users" with the following fields
+    - id (auto increment)
+    - first name
+    - last name
+
+3) create a new table named "cars" with the following fields
+    - id (auto increment)
+    - make
+    - model
+    - color
+    - year
+
+4) populate these tables with at least 5 records each - the more the merrier
+
+5) Write the SQL queries to accomplish the following: (write each of your queries below for review)
+
+    - select all records from users
+
+    SELECT * FROM car_dealership.users;
+
+    - select all records from cars where car make = "Toyota"
+
+    SELECT * FROM car_dealership.cars
+    WHERE make = "Toyota";
+
+    - use a join to select the first name and car model of every user who has bought a car
+    SELECT u.first_name, c.model
+    FROM users u
+    JOIN users_cars uc
+    	on u.id = uc.user_id
+    JOIN cars c
+    	on c.id = uc.car_id;
+
+    - use a join to select the first and last name of everyone who has bought a red car
+
+    SELECT u.first_name, u.last_name
+    FROM users u
+    JOIN users_cars uc
+    	on u.id = uc.user_id
+    JOIN cars c
+    	on c.id = uc.car_id
+    WHERE c.color = "Red";
+
+    - use an insert statement to create a new record in each table
+
+    insert into car_dealership.cars values (6, "Ford", "Fiesta", "Yellow", 2015);
+    insert into car_dealership.users values (6, "Joey", "Baggadonuts");
+    insert into car_dealership.users_cars values (6, 6, 6);
+
+    - use sql to update a record in the "cars" table
+
+    update car_dealership.cars
+    set model = "Forrester"
+    where id = 4;
+
+6) Using MySQLWorkbench, export the "users_cars", "users" and "cars" schema with all objects and data
+into a self-contained sql file. - check the exported file into git
+
+    https://github.com/meejahnsnutshell/mySQLlabs/blob/master/mySQLlab_Exercise3.sql
