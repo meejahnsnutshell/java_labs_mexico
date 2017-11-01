@@ -1,0 +1,89 @@
+
+1) Describe the exception hierarchy.
+
+- Throwable is super, subclasses are Error and Exception
+
+2) What is a try/catch statement?
+
+- try surrounds your code that might throw an error
+- catch specifies the error types that may result and "catches" them to keep your code running
+
+3) Why do we use try/catch statements?
+
+- To keep our programs running when exceptions/errors are encountered. Without a try/catch, the program
+    terminates.
+
+4) Write a full example of a try/catch/finally statement that catches two distinct exceptions
+
+- try {
+    //code
+}
+catch (ArithmeticException arith){
+    sout("Divide by zero!");
+}
+
+catch(ArrayIndexOutOfBoundsException array){
+    sout("Nope! Can't do that!");
+}
+
+
+5) What does it mean to "throw" an exception? How does it work?
+
+- when an exception occurs, the code has thrown an exception
+- you can manually "throw" (or create) an exception even if your code won't
+
+6) What happens if your application encounters an exception and you don't catch it or throw it?
+
+- it will stop running
+
+7) When catching exception in an inheritance hierarchy, should you catch the subclass exception or the
+superclass exception first? Why?
+
+- the subclass, because the superclass will catch all subclass exceptions, so you won't know which
+specific exception occurred.
+
+8) Write a nested try/catch statement.
+
+try{
+    // some code
+    try{
+    //some code
+    } catch (Arithmetic Exception ae){
+        sout("Arithmetic Exception");
+    }
+} catch (ArrayIndexOutOfBounds ai){
+    sout("Array index out of bounds")
+}
+
+9) What does it mean to rethrow an exception?
+
+It means you are not handling it in the current method, but rethrowing it to the calling method, where
+it may be handled or rethrown again.
+
+10) What are the 7 methods that come with the Throwable class?
+
+- printStackTrace(); - displays the stack trace
+- toString();
+- fillInStackTrace();
+- getLocalizedMessage();
+- getMessage();
+- printStackTrace(PrintStream stream) - Sends the stack trace to the specified stream.
+- printStackTrace(PrintWriter stream) - Sends the stack trace to the specified stream.
+
+11) What does the "finally" block do?
+
+executes after a try/catch block is exited, regardless of whether an exception occurred or not.
+Finally follows a try/catch statement.
+
+12) When is the finally block executed? Will it ever not be executed?
+The finally block is executed after a try/catch block is exited.
+It will always be executed.
+
+13) What are the three recently added features to Java exceptions?
+- try with resources, which automatically closes open files
+- multi catch - two or more exceptions caught by the same catch clause
+- final (or more precise) rethrow - not needed often, "restricts the type of exceptions that can be
+    rethrown to only those checked exceptions that the associated try block throws, that are not
+    handled by a preceding catch clause, and that are a subtype or supertype of the parameter."
+
+
